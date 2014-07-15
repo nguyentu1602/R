@@ -1,0 +1,17 @@
+{
+    "contents" : "# R Cookbook by Paul Teetor\n\n# Chapter 1: Get started --------------------------------------------------\n# To get help with function:\nargs(pnorm)      # Remind all arguments\nexample(pnorm())   # Give an example\n?pnorm\n\n# To search the supplied documentation\nhelp.search(\"pattern\") # Give all the related topics\n??pattern              # Give the same\nhelp.search(\"adf.test\")\nhelp.search(\"dickey-fuller\")\n\n# To get help on a package\nhelp(package='cluster')\n\n# To extract vignette of some packages, use: (a pdf will pop up at the end)\nvignette(package='zoo')\nvignette('zoo-read')\n\n# To search the web for R sites:\nRSiteSearch(\"canonical correlation\")\n# http://rseek.org\n# http://crantastic.org     - offer summaries of packages\n\n\n# Chapter 2: Some basics --------------------------------------------------\n\n# To list variables, use ls.str()\nls.str()\nls()\n# To remove all variables:\nrm(list=ls())\n\n# To get basic stats, we can use mean(), sd(), var(), cor(), cov() with data frames\n# To create sequences, use seq() and rep()\nseq(1,10,by=2)\nseq(from=0, to=20, length.out=5)\nrep(c(1,'2'), times=5)\n\n# To compare 2 vectors:\n",
+    "created" : 1389186286836.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2474559431",
+    "id" : "97576EB6",
+    "lastKnownWriteTime" : 1389239534,
+    "path" : "~/Program/R/R.Cookbook/R.Cookbook.R",
+    "project_path" : "R.Cookbook.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
