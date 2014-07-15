@@ -1,0 +1,18 @@
+/*
+  Program to pre-process the FIX data file downloaded from CME group
+*/
+
+#include <stdio.h>
+#include<string.h>
+
+
+// MAIN :
+
+void main ()
+{
+  FILE * infile = NULL; //Create a pointer to a file, later use with fopen() which returns a file pointer
+  FILE * outfile = NULL;
+
+  char * infilename = (char *) malloc (50 + 1); // Allocate a pointer to store file name 1
+
+}//main()
