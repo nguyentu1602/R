@@ -1,0 +1,17 @@
+{
+    "contents" : "\\documentclass[12pt]{article}\n\n\\usepackage[margin=0.8in]{geometry}\n\\begin{document}\n\\SweaveOpts{concordance=TRUE}\n\n\n% This part is exclusively for making title:\n\\title{\\textbf{New features for graph study}}\n  \\date{\\today}\n  \\author{Cuong Nguyen\\\\ Grinnell College \\and me again, \\\\ \\LaTeX\\ Academy}\n  \\vspace*{-30pt}\n  {\\let\\newpage\\relax\\maketitle}\n\\maketitle\n\n% First section\n\\section*{Old features} \n\n\\begin{enumerate}\n  \\item 39 binary columns of survival in the previous period\n  \\item 1 weight in G40\n  \\item 1 percent of 1\n  \\item 1 number of switch\n  \\item 1 count to last 0\n\\end{enumerate}\n\n\n\\section*{New features}\n\n\\begin{enumerate}\n  \\item The number of degrees in the previous graph(s)\n    Let the degree = 0 if the edges does not exist  \n  \\item Sum of the degree of the second level of neighbor nodes\n  \\item Sum of the degree of the third level of neighbor nodes\n  \\item Google Pagerank of a vertices\n  \\item The neighborhood that this edge/node belong to\n  \n\\end{enumerate}\n\n\\section*{New functions to learn}\n\\begin{enumerate}\n  \\item get.adjlist: Create adjacency lists from a graph, either for adjacent edges or for neighboring vertices.\n  \\item get.edgeids: \n  \\item components: Finds all vertices reachable from a given vertex, or the opposite: all vertices from which a given vertex is reachable via a directed path.\n  \\item  neighborhood: These functions find the vertices not farther than a given limit from another fixed vertex, these are called the neighborhood of the vertex.\n  \\item cohesive.blocks \n  \\item communities: igraph community detection functions return their results as an object from the communities class. This manual page describes the operations of this class.\n  \\item community.to.membership: community.to.membership takes a merge matrix, a typical result of community structure detection algorithms and creates a membership vector by performing a given number of merges in the merge matrix.\n  \\item clusters: Calculate the maximal (weakly or strongly) connected components of a graph\n  \\item edge.betweenness.community: Community structure detection based on edge betweenness\n  \\item evcent: Eigen vector centrality\n  \\item fastgreedy.community: Community structure via greedy optimization of modularity\n  \\item graph.coreness: The k-core of graph is a maximal subgraph in which each vertex has at least degree k. The coreness of a vertex is k if it belongs to the k-core but not to the (k+1)-core.\n  \n  \\item vertex.connectivity: The vertex connectivity of a graph or two vertices, this is recently also called group cohesion.  \n\\end{enumerate}\n\n\\section*{How am I implement all of this?}\nDon't know...\n\n\n\n\n\\end{document}",
+    "created" : 1392791989760.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1231558897",
+    "id" : "641C802D",
+    "lastKnownWriteTime" : 1393118287,
+    "path" : "~/Program/Git/mat499/FeaturesDescription.Rnw",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "sweave"
+}

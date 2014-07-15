@@ -1,0 +1,57 @@
+## Simulation study - question 3
+##
+X = matrix (0, nrow = 581, ncol = 70)
+X[1, ] = rnorm(n=70, mean = 0, sd = 0.276)
+for (i in 2:581) {
+  X[i, ] = 0.415*X[i-1, ] + rnorm(n=70, mean = 0, sd=0.276)
+}
+
+#X = data.frame(X)
+#PC1 <- prcomp(X, center= TRUE, scale = TRUE)
+PC1 <- prcomp(X, center= colMeans(X), scale = apply(X, 2, sd))$x[,1]
+plot.ts(PC1)
+
+## Question 4
+
+MBHsim = function() {
+  PC1 = matrix(0, nrow = 581, ncol = 10)
+  for (simnum in 1:10) {
+    X = matrix (0, nrow = 581, ncol = 70)
+    X[1, ] = rnorm(n=70, mean = 0, sd = 0.276)
+      for (i in 2:581) {
+        X[i, ] = 0.415*X[i-1, ] + rnorm(n=70, mean = 0, sd=0.276)
+      }
+      #X = data.frame(X)
+      #PC1 <- prcomp(X, center= TRUE, scale = TRUE)
+      PC1[, simnum] <- prcomp(X, center= colMeans(X), scale = apply(X, 2, sd))$x[,1]
+  }
+  return (data.frame(PC1))
+    
+}
+
+## Test simulation
+PC1 = MBHsim()
+plot.ts(PC1)
+
+## Question 5
+
+MBHsim2 = function() {
+  PC1 = matrix(0, nrow = 581, ncol = 10)
+  for (simnum in 1:10) {
+    X = matrix (0, nrow = 581, ncol = 70)
+    X[1, ] = rnorm(n=70, mean = 0, sd = 0.276)
+    for (i in 2:581) {
+      X[i, ] = 0.415*X[i-1, ] + rnorm(n=70, mean = 0, sd=0.276)
+    }
+    #X = data.frame(X)
+    ## Cut out the last 79 years:
+    Y <- X[(581-79+1):581,]
+    PC1[, simnum] <- prcomp(X, center= colMeans(Y), scale = apply(Y, 2, sd))$x[,1]
+  }
+  return (data.frame(PC1))
+  
+}
+
+## Test simulation
+PC2 = MBHsim2()
+plot.ts(PC2)

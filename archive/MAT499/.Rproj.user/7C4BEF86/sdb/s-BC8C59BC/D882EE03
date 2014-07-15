@@ -1,0 +1,17 @@
+{
+    "contents" : "\\documentclass[12pt]{article}\n\n\\usepackage[margin=0.8in]{geometry}\n\\usepackage{amssymb,amsthm,latexsym}\n\\theoremstyle{plain}\n\\theoremstyle{definition}\n\n\\newtheorem{theorem}{Theorem}\n\\newtheorem{definition}{Definition}\n\\newtheorem{notation}{Notation}\n\\newtheorem{corollary}{Corollary}\n\\newtheorem{proposition}{Proposition}\n\\newtheorem{lemma}{Lemma}\n\\newtheorem{question}{Question}\n\\newtheorem{remark}{Remark}\n\\newcommand{\\Cbb}{\\mathbb{C}}\n\\newcommand{\\Rbb}{\\mathbb{R}}\n\\newcommand{\\Nbb}{\\mathbb{N}}\n\n\\begin{document}\n\\SweaveOpts{concordance=TRUE}\n\\title{Math 316, Review}\n\\maketitle\n\\section*{Chapter 2: Sequences and Series}\n\n\\subsection*{2.2 The Limit of a Sequence}\n\\begin{definition}\nA \\textit{sequence} is a function whose domain is $\\mathbb{N}$.\n\\end{definition}\n\n\\begin{definition}\nA sequence $(a_n)$ converges to a real number \\textit{a} if, $\\forall \\epsilon$ in $\\mathbb{R}, \\ \\exists N \\in \\Nbb$ s.t.\n\n\\end{definition}\n\n\n\\begin{theorem}\n\\end{theorem}\n\n\n\n\n\n\\end{document}",
+    "created" : 1393108931183.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "766949373",
+    "id" : "D882EE03",
+    "lastKnownWriteTime" : 1393119880,
+    "path" : "~/Program/Git/RLearning/MAT316review.Rnw",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "sweave"
+}

@@ -1,0 +1,17 @@
+{
+    "contents" : "x = c (1,2,3)\ny = c (1,2,\"cat\",3)\nmode(y)\nclass(y)\ntypeof(y)\n# Assign names\nz <- c(one = 1, two =2, three =3)\nnames(x) = c ('one', 'two', 'three')\n# Matrix\nrmat = matrix(rnorm(15), 5, 3, \n              dimnames = list(NULL, c('A','B', 'C')))\ndimnames(rmat) = list(NULL, c('CA','BU', 'EC'))\n\n# List\nmylist = list(c(1,2,4), 'dog', 3, 'cat', TRUE, c (4,5,10))\nsapply(mylist, mode)\nnames(mylist) = c ('first', 'second', 'third', 'baha', 'opps')\n\nmylist1 = list(a=c(1,2,3),b=c(\"cat\",\"dog\",\"duck\"),\n               d=factor(\"a\",\"b\",\"a\"))\n# Use summary is one of the best way to understand a data object\n# Nested list might create trouble, which then solved with str\nnestlist = list(a=list(matrix(rnorm(10),5,2),val=3),\n                b=list(sample(letters,10),values=runif(5)),\n                c=list(list(1:10,1:20),list(1:5,1:10)))\nstr(nestlist)",
+    "created" : 1388222441711.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1305112002",
+    "id" : "929C51EB",
+    "lastKnownWriteTime" : 1388671192,
+    "path" : "~/Program/R/Data.manipulation/structures.R",
+    "project_path" : "structures.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

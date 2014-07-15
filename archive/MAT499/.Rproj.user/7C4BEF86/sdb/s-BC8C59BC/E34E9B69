@@ -1,0 +1,17 @@
+{
+    "contents" : "install.packages(\"fastR\")\nrequire(fastR)\n??nlmax\n\n\ny = subset(miaa05$Pts, miaa05$Pts > 0 )\n\ny\nloglike <- function (theta, x){\n  sum(dgamma(x, theta[1], theta[2], log=TRUE))\n}\nsummary(nlmax(loglike, p=c(1,0.000001), x=y))\n\n# Get the two parameters lambda and alpha for the denominator distribution\nparameters = nlmax(loglike, p = c (0.1, 0.000001), x=y)$estimate\nparameters\n\n# Get the lambda estimator for the nominator distribution\nlambda = 1/mean(y)\n\nlambda\nnumerator <- lambda * exp( -lambda * y)\nA <- -2*sum(log(numerator))\n\n#denominator <- ((parameters[2]^parameters[1]) / (gamma(parameters[1]))) * y^(parameters[1] -1) *exp(-1*parameters[2] * y)\n\n#prod(x=numerator)/prod(x=denominator)\n\n#numsum <- cumprod(numerator)[length(numerator)]\n#densum <- cumprod(denominator)[length(denominator)]\n\n# biglambda <- (log(numsum) - log(densum))*(-2)\n\n# biglambda\n# denominator:\n\nparameters[1]\nn <- length(y)\ndenominator <- -2*(n*parameters[1]*log(parameters[2]) + (parameters[1]-1)*sum(log(y)) - parameters[2]*sum(y) - n*log(gamma(x=parameters[1])))\n\n\nB <- -2*sum(log(dgamma(x=y,shape=parameters[1],rate=parameters[2])))\nB\n\n\ndenominator\n\npchisq(q=(A-B),1)\n\n1-pchisq(biglambda,1)\n\n\n### 5.21\n\n\ngeno <-c(83,447,470)\ncounts <- geno\n\nloglik <- function(theta,x) {\n  probs <- c(theta^2, 2*theta*(1-theta), (1-theta)^2)\n  if (any (probs <=0)) return (Inf)\n}  \n\ntheta2probs <- function(theta) {\n  c(theta^2, 2*theta*(1-theta), (1-theta)^2)\n}\n\n\n\n\n\n?chisq.test\nchisq.test(counts,p=theta2probs(mle$estimate))\n\n\n# so we can grab that statistic and redo the p-value:\nX <- chisq.test(counts,p=theta2probs(mle$estimate))$statistic\n1 - pchisq(X,df=3-1)  # df=3 for multinomial, 1 for model based on theta\n\n# alternatively, we can do this manually:\no <- counts\ne <- theta2probs(theta.hat) * sum(o)\ntestStats <- c(lrt = 2 * sum( o * log (o/e)), pearson= sum( (o-e)^2/e) )\ntestStats\n1-pchisq(testStats,df=3-1)\nchisq.test(counts,p=theta2probs(mle$estimate))\n# so we can grab that statistic and redo the p-value:\nX <- chisq.test(counts,p=theta2probs(mle$estimate))$statistic\n1 - pchisq(X,df=3-1)  # df=3 for multinomial, 1 for model based on theta\n\n# alternatively, we can do this manually:\no <- counts\ne <- theta2probs(theta.hat) * sum(o)\ntestStats <- c(lrt = 2 * sum( o * log (o/e)), pearson= sum( (o-e)^2/e) )\ntestStats\n1-pchisq(testStats,df=3-1)\n\ncounts <- c(rep(0,9), rep(1,2), rep(2,3) ,4)\ncounts\ntable(counts)\nT= sd(counts)/mean(counts)\n14*var(counts)/mean(counts)\n?chisq.test\n\n\n\n?chisq.test\n\nbaldness <- rbind(c(251,165,195,50,2) , c(331,221,185,34,1))\nchisq.test(baldness,correct=TRUE)\n",
+    "created" : 1393297270349.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2119757107",
+    "id" : "E34E9B69",
+    "lastKnownWriteTime" : 140193047517232,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
