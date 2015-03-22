@@ -1,9 +1,11 @@
 Package: cuong1stpack
 Type: Package
 Title: What the package does (short line)
-Version: 1.0
+Version: 0.0.0.9000
 Date: 2015-03-22
-Author: Who wrote it
+Author: Cuong
 Maintainer: Who to complain to <yourfault@somewhere.net>
 Description: More about what it does (maybe more than one line)
-License: What license is it under?
+License: Proprietary. Do not distribute outside James's software services ltd.
+Imports: parallel (>= 1.0)
+Suggests: testthat
