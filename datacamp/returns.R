@@ -1,3 +1,8 @@
+# Author:   Cuong Nguyen
+# Date:     18072014
+# Purpose:  1st problem, Zivot datacamp
+# Deps:     
+
 # Assign the url to the csv file
 data_url = "http://faculty.washington.edu/ezivot/econ424/sbuxPrices.csv"
 # Load the data frame using read.csv
@@ -12,7 +17,7 @@ tail(sbux_df)
 class(sbux_df)
 class(sbux_df$Date)
 
-# Drop = false preserves the dimesion
+# Drop = false preserves the dimesion, so that closing price is still a matrix
 closing_prices = sbux_df[,'Adj.Close', drop=FALSE]
 
 dim (closing_prices)
@@ -41,8 +46,8 @@ sbux_prices_df = sbux_df[, "Adj.Close", drop = FALSE]
 
 # Denote n the number of time periods:
 n = nrow(sbux_prices_df)
-sbux_ret = ((sbux_prices_df[2:n, 1] - sbux_prices_df[1:(n - 1), 1])/sbux_prices_df[1:(n - 
-                                                                                        1), 1])
+sbux_ret = ((sbux_prices_df[2:n, 1] - sbux_prices_df[1:(n - 1), 1])/sbux_prices_df[1:(n -1), 1])
 
 # Notice that sbux_ret is not a data frame object
 class(sbux_ret)
+
